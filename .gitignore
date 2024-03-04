@@ -1,1 +1,7 @@
 node_modules
+.gitignore
+push
+ch
+package-lock.json
+instl.sh
+nodesource_setup.sh
