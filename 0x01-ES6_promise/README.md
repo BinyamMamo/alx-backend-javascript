@@ -1,6 +1,6 @@
 # ES6 Promises Project 📚
 
-<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/12/75862d67ca51a042003c.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240305%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240305T122828Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=fe0761e065c70017ead8b0ac6f2b55e9c538a1a09fcce0c9f9b5ad36f3699d6b">
+<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*QJpDCVVeYhklYJ3uJGNRXQ.jpeg">
 
 In this project, I had the opportunity to explore the powerful concept of Promises in JavaScript ES6. I delved into the intricacies of asynchronous operations and learned how to effectively manage them using `then`, `resolve`, `catch`, and other Promise methods. Additionally, I gained practical experience with the `await` operator and `async` functions, which are essential for writing clean and efficient code.
 
