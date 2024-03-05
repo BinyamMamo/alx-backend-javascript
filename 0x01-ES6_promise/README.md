@@ -2,6 +2,7 @@
 
 <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*QJpDCVVeYhklYJ3uJGNRXQ.jpeg">
 
+## Introduction 🚀
 In this project, I had the opportunity to explore the powerful concept of Promises in JavaScript ES6. I delved into the intricacies of asynchronous operations and learned how to effectively manage them using `then`, `resolve`, `catch`, and other Promise methods. Additionally, I gained practical experience with the `await` operator and `async` functions, which are essential for writing clean and efficient code.
 
 ## Tasks 📝
