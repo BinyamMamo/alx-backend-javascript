@@ -1,9 +1,9 @@
-function getFullResponseFromAPI(success) {
+export default function getFullResponseFromAPI(success) {
   return new Promise((resolve, reject) => {
     if (success) {
       resolve({
         status: 200,
-        body: 'success',
+        body: 'Success',
       });
     } else {
       // eslint-disable-next-line prefer-promise-reject-errors
@@ -11,5 +11,3 @@ function getFullResponseFromAPI(success) {
     }
   });
 }
-
-export default getFullResponseFromAPI;
