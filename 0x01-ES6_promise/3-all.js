@@ -9,5 +9,6 @@ export default function handleProfileSignup() {
     return createUser();
   }).then((obj) => {
     user = obj;
-  }).catch(() => console.log(`Signup system offline`)).finally(() => console.log(photo, user.firstName, user.lastName));
+  }).catch(() => console.log('Signup system offline'))
+    .finally(() => console.log(photo, user.firstName, user.lastName));
 }
