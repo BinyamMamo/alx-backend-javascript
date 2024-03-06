@@ -1,4 +1,4 @@
-export function getFullResponseFromAPI(success) {
+export default function getFullResponseFromAPI(success) {
   return new Promise((resolve, reject) => {
     if (success) {
       resolve({
@@ -7,7 +7,7 @@ export function getFullResponseFromAPI(success) {
       });
     } else {
       // eslint-disable-next-line prefer-promise-reject-errors
-      reject('The fake API is not working currently');
+      reject(Error('The fake API is not working currently'));
     }
   });
 }
