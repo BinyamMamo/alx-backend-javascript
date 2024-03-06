@@ -3,7 +3,7 @@ function getFullResponseFromAPI(success) {
     if (success) {
       resolve({
         status: 200,
-        body: 'Success',
+        body: 'success',
       });
     } else {
       // eslint-disable-next-line prefer-promise-reject-errors
