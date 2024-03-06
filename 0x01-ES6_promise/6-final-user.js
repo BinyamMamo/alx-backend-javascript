@@ -11,13 +11,12 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       if (status === 'fulfilled') {
         return {
           status,
-          value
-        };
-      } else {
-        return {
-          status,
-          value: `Error: ${reason.message}`
+          value,
         };
       }
+      return {
+        status,
+        value: `Error: ${reason.message}`,
+      };
     }));
 }
