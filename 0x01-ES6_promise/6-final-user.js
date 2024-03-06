@@ -7,10 +7,5 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
 
   return Promise
     .allSettled([user, photo])
-    .then((results) => results.map((result) => ({
-      status: result.status,
-      value: result.status === 'fulfilled' ? result.value : result.reason,
-    }))).catch((err) => {
-      console.log(err);
-    });
+    .finally((results) => results);
 }
