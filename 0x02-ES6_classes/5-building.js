@@ -12,7 +12,6 @@ export default class Building {
 
   // Abstract method to be implemented by subclasses
   evacuationWarningMessage() {
-    if (this.constructor.name !== 'Building')
-      throw new Error('Class extending Building must override evacuationWarningMessage');
+    if (this.constructor.name !== 'Building') throw new Error('Class extending Building must override evacuationWarningMessage');
   }
 }
