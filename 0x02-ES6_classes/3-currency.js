@@ -9,18 +9,28 @@ export default class Currency {
     return `${this.name} (${this.code})`;
   }
 
-  /* eslint-disable no-underscore-dangle */
   // getter for code
-  get code() { return this._code; }
+  get code() {
+    // eslint-disable-next-line no-underscore-dangle
+    return this._code;
+  }
   
   // getter for name
-  get name() { return this._name; }
+  get name() {
+    // eslint-disable-next-line no-underscore-dangle
+    return this._name;
+  }
   
   // setters
   // setter for code
-  set code(c) { this._code = c; }
+  set code(c) {
+    // eslint-disable-next-line no-underscore-dangle
+    this._code = c;
+  }
   
   // setter for name
-  set name(n) { this._name = n; }
-  /* eslint-enable no-underscore-dangle */
+  set name(n) {
+    // eslint-disable-next-line no-underscore-dangle
+    this._name = n;
+  }
 }
