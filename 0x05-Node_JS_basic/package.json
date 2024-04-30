@@ -1,10 +1,10 @@
 {
     "name": "node_js_basics",
     "version": "1.0.0",
-    "description": "",
+    "description": "> \"Why did the Express.js server break up with its router? Because it found a faster middleware!\"",
     "main": "index.js",
     "scripts": {
-        "lint": "./node_modules/.bin/eslint",
+        "lint": "eslint",
         "check-lint": "lint [0-9]*.js",
         "test": "./node_modules/mocha/bin/mocha --require babel-register --exit",
         "dev": "nodemon --exec babel-node --presets babel-preset-env ./server.js ./database.csv"
