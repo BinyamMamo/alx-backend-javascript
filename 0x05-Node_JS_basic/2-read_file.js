@@ -1,6 +1,6 @@
 // 2-read_file.js
 
-const fs = require('node:fs');
+const fs = require('fs');
 
 function countStudents(path) {
   try {
