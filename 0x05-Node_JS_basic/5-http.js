@@ -19,7 +19,7 @@ const PORT = 1245;
 function countStudents(filePath) {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err || data == '') reject(new Error('Cannot load the database'));
+      if (err || !data) reject(new Error('Cannot load the database'));
 
       if (data) {
         const lines = data
@@ -30,7 +30,8 @@ function countStudents(filePath) {
         const csStudents = students.filter((student) => student[3] === 'CS');
         const sweStudents = students.filter((student) => student[3] === 'SWE');
 
-        const result = `Number of students: ${students.length}\n` +
+        const result =
+          `Number of students: ${students.length}\n` +
           `Number of students in CS: ${csStudents.length}. List: ${csStudents
             .map((s) => s[0])
             .join(', ')}\n` +
@@ -50,14 +51,13 @@ const app = http.createServer((req, res) => {
     res.end();
   } else if (req.url === '/students') {
     countStudents(process.argv[2])
-      .then((result) => {
+    .then((result) => {
         res.write('This is the list of our students\n');
-        res.write(result);
-        res.end();
+        res.end(result);
       })
       .catch((err) => {
-        res.write(err.message);
-        res.end();
+        res.write('This is the list of our students\n');
+        res.end(err.message);
       });
   }
 });
