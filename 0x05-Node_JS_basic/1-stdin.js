@@ -8,10 +8,10 @@
 process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
 process.stdin.on('data', (INPUT) => {
-  process.stdout.write(`Your name is: ${INPUT.toString().trim()}\r`);
+  process.stdout.write(`Your name is: ${INPUT.toString().trim()}c\r`);
   process.exit();
 });
 
 process.on('exit', () => {
-  process.stdout.write('This important software is now closing\r');
+  process.stdout.write('This important software is now closing\n\r');
 });
