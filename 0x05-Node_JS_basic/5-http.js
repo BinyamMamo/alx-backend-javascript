@@ -16,10 +16,11 @@ const http = require('http');
 const fs = require('fs');
 const PORT = 1245;
 
-function countStudents(filePath, response) {
+function countStudents(filePath) {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err) reject(new Error('Cannot load the database'));
+      if (err || data == '') reject(new Error('Cannot load the database'));
+
       if (data) {
         const lines = data
           .split('\n')
@@ -29,32 +30,38 @@ function countStudents(filePath, response) {
         const csStudents = students.filter((student) => student[3] === 'CS');
         const sweStudents = students.filter((student) => student[3] === 'SWE');
 
-        response.write(`Number of students: ${students.length}\n`);
-        response.write(
+        const result = `Number of students: ${students.length}\n` +
           `Number of students in CS: ${csStudents.length}. List: ${csStudents
             .map((s) => s[0])
-            .join(', ')}\n`
-        );
-        response.write(
+            .join(', ')}\n` +
           `Number of students in SWE: ${sweStudents.length}. List: ${sweStudents
             .map((s) => s[0])
-            .join(', ')}\n`
-        );
-        resolve(response);
+            .join(', ')}\n`;
+
+        resolve(result);
       }
     });
   });
 }
 
 const app = http.createServer((req, res) => {
-  if (req.url == '/') {
+  if (req.url === '/') {
     res.write('Hello Holberton School!');
-  } else if (req.url == '/students') {
-    res.write('This is the list of our students\n');
-    countStudents(process.argv[2], res)
-      .then((r) => r.end())
-      .catch((err) => res.end(err.message));
+    res.end();
+  } else if (req.url === '/students') {
+    countStudents(process.argv[2])
+      .then((result) => {
+        res.write('This is the list of our students\n');
+        res.write(result);
+        res.end();
+      })
+      .catch((err) => {
+        res.write(err.message);
+        res.end();
+      });
   }
 });
 
 app.listen(PORT);
+
+module.exports = app;
