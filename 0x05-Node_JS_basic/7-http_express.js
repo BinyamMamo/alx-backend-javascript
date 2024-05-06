@@ -37,12 +37,11 @@ function countStudents(filePath) {
         const csStudents = students.filter((student) => student[3] === 'CS');
         const sweStudents = students.filter((student) => student[3] === 'SWE');
 
-        const result =
-          `Number of students: ${students.length}\n` +
-          `Number of students in CS: ${csStudents.length}. List: ${csStudents
+        const result = `Number of students: ${students.length}\n`
+          + `Number of students in CS: ${csStudents.length}. List: ${csStudents
             .map((s) => s[0])
-            .join(', ')}\n` +
-          `Number of students in SWE: ${sweStudents.length}. List: ${sweStudents
+            .join(', ')}\n`
+          + `Number of students in SWE: ${sweStudents.length}. List: ${sweStudents
             .map((s) => s[0])
             .join(', ')}\n`;
 
@@ -56,12 +55,8 @@ app.get('/', (req, res) => res.status(200).send('Hello Holberton School!'));
 
 app.get('/students', (req, res) => {
   countStudents(process.argv[2])
-    .then((result) =>
-      res.status(200).send(`This is the list of our students\n${result}`)
-    )
-    .catch((err) =>
-      res.status(200).send(`This is the list of our students\n${err.message}`)
-    );
+    .then((result) => res.status(200).send(`This is the list of our students\n${result}`))
+    .catch((err) => res.status(200).send(`This is the list of our students\n${err.message}`));
 });
 
 app.listen(PORT);
